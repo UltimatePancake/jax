@@ -26,21 +26,6 @@
 				<version>1.8</version>
 				<executions>
 					<execution>
-						<id>stop</id>
-						<phase>install</phase>
-						<configuration>
-							<target name="Stop Tomcat">
-								<echo message="Stopping Tomcat server"/>
-								<exec executable="/bin/bash">
-									<arg value="${tomcatLocation}/bin/shutdown.sh"/>
-								</exec>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-					<execution>
 						<id>deploy</id>
 						<phase>install</phase>
 						<configuration>
@@ -53,34 +38,6 @@
 							<goal>run</goal>
 						</goals>
 					</execution>
-					<execution>
-						<id>start</id>
-						<phase>install</phase>
-						<configuration>
-							<target name="Start Tomcat">
-								<echo message="Starting Tomcat server"/>
-								<exec executable="/bin/bash">
-									<arg value="${tomcatLocation}/bin/startup.sh"/>
-								</exec>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution>
-					<!-- <execution>
-						<id>sleep</id>
-						<phase>install</phase>
-						<configuration>
-							<target name="Wait">
-								<echo message="Wait for Tomcat server to start gracefully"/>
-								<sleep seconds="10"/>
-							</target>
-						</configuration>
-						<goals>
-							<goal>run</goal>
-						</goals>
-					</execution> -->
 				</executions>
 			</plugin>
 		</plugins>
